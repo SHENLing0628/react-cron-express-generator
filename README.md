@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+<!--
+ * @Author: ShenLing
+ * @Date: 2020-11-24 17:51:57
+ * @LastEditors: ShenLing
+ * @LastEditTime: 2020-11-25 10:44:41
+-->
+### REACT-CRON-GENERATOR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> PROJECT DESCRIPTION
+> 1. using Create-React-App to create this project
+> 2. this project is for personal practice 
 
-## Available Scripts
+### open-source UI library
+- [Alibaba Fusion Online Document](https://fusion.design/pc/component/doc/102)
+- [Alibaba Fusion Github](https://github.com/alibaba-fusion/next?spm=fusion-design.component-design-fusion.0.0.272238035PO0Pw)
+  
+### Usage
+- Start the project `yarn start`
+- Build the project `yarn build`
+- Install the dependencies `yarn` or `yarn add <--package-name-->` or `npm install`
+- Component Document:
+```js
+import CronGenerator from '@/components/CronGenerator'
+export default class App extends React.Component {
+  state = {
+    cronGeneratorVisible: false,
+    cronString: '* * * ? * * *'
+  }
 
-In the project directory, you can run:
+  onClose = () => {
+    this.setState({ cronGeneratorVisible: false })
+  }
+  
+  onConfirm = (val) => {
+    this.setState({ cronString: val})
+  }
 
-### `yarn start`
+  render () {
+	return (
+	  <div className="cronGeneratorApp">
+          <p>CRON Generator Sample:</p>
+          <div className="cron_input">
+            <Input value={cronString} />
+            <Button type="primary" onClick={() => { this.setState({ cronGeneratorVisible: true }) }}>CRON</Button>
+          </div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+          <CronGenerator
+            isPreview
+            initCron={cronString}
+            dialogVisible={cronGeneratorVisible}
+            onClose={this.onClose}
+            onConfirm={this.onConfirm}
+          />
+        </div>
+	)
+  }
+}
+```
+| 参数名称      | 参数描述                           | 参数类型   | 默认值  | 备注                                           |
+| -----------   | ---------------------------------- | ---------- | -------| ---------------------------------------------- |
+| isPreview     | 是否开启预览模式                   | Boolean     | false  | 该模式下，将不会显示新增取消按钮                                             |
+| initCron      | 需传入解析到UI界面的CRON字符串     | String      | -      | -                                             |
+| dialogVisible | CRON对话框显示                     | Boolean     | false  | -                                             |
+| onClose       | 关闭对话框对应方法，且取消获取CRON  | Function   | -      | -                                             |
+| onConfirm     | 关闭对话框且获取到最新的CRON表达式  | Function   |  -     | 该方法中会传入一个参数val，代表生成的cron表达式|
