@@ -2,9 +2,6 @@
   "name": "react-cron-generator",
   "version": "0.1.0",
   "private": false,
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/@SHENLing0628" 
-  },
   "dependencies": {
     "@alifd/next": "^1.21.11",
     "@testing-library/jest-dom": "^5.11.4",
