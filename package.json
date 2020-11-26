@@ -4,7 +4,7 @@
   "private": false,
   "repository": {
     "type": "git", 
-    "url": "git+https://github.com/zoomla/zico.git" 
+    "url": "git+https://github.com/SHENLing0628/react-cron-generator.git" 
   },
   "dependencies": {
     "@alifd/next": "^1.21.11",
