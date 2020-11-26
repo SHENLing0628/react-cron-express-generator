@@ -1,8 +1,16 @@
+/*
+ * @Author: ShenLing
+ * @Date: 2020-11-24 17:51:57
+ * @LastEditors: ShenLing
+ * @LastEditTime: 2020-11-25 10:51:49
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import CronGenerator from './components/CronGenerator'
 
 ReactDOM.render(
   <React.StrictMode>
