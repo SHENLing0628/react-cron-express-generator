@@ -1,7 +1,11 @@
 {
-  "name": "react-cron-generator",
+  "name": "@SHENLing0628/react-cron-generator",
   "version": "0.1.0",
   "private": false,
+  "repository": {
+    "type": "git", 
+    "url": "git+https://github.com/zoomla/zico.git" 
+  },
   "dependencies": {
     "@alifd/next": "^1.21.11",
     "@testing-library/jest-dom": "^5.11.4",
