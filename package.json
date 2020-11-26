@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "publishConfig": { 
-    "registry": "https://npm.pkg.github.com" 
+    "registry": "https://npm.pkg.github.com/@SHENLing0628" 
   },
   "dependencies": {
     "@alifd/next": "^1.21.11",
