@@ -2,7 +2,7 @@
  * @Author: ShenLing
  * @Date: 2020-11-24 17:51:57
  * @LastEditors: ShenLing
- * @LastEditTime: 2020-11-30 14:00:49
+ * @LastEditTime: 2020-11-30 14:01:36
 -->
 ### REACT-CRON-GENERATOR
 
@@ -65,4 +65,4 @@ export default class App extends React.Component {
 | onConfirm     | 关闭对话框且获取到最新的CRON表达式  | Function   |  -     | 该方法中会传入一个参数val，代表生成的cron表达式|
 
 
-### LISCENSE: MIT
+### LICENSE: MIT
