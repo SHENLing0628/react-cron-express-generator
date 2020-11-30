@@ -1,7 +1,8 @@
 {
-  "name": "@SHENLing0628/react-cron-express-generator",
+  "name": "@shenling0628/react-cron-express-generator",
   "version": "0.1.0",
   "private": false,
+  "author": "ShenLing",
   "repository" : {
     "type" : "git",
     "url": "ssh://git@github.com:SHENLing0628/react-cron-generator.git",
